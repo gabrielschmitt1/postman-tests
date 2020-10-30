@@ -8,6 +8,6 @@ postman_tests:
     script:
         - newman --version
         - npm install -g newman-reporter-html
-        - newman run TestedaApi_reqres.postman_collection.json --reporters cli,html
+        - newman run TestedaApi_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste.html
         
 
