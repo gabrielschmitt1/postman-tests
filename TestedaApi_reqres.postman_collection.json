@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "c31296b5-35ae-4d26-9fee-6528ff1a36eb",
+		"name": "Teste da Api reqres",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Exibir usuários ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"// Validar o status ",
+							"",
+							"tests[\"Exibir o status 200\"] = responseCode.code == 200; ",
+							"",
+							"//Validar o tempo da requisição ",
+							"",
+							"tests[\"Response time is less than 200ms\"] = responseTime < 4300;",
+							"",
+							"//Validar a estrutrura do json ",
+							"",
+							"var estruturaJson; ",
+							"",
+							"estruturaJson = JSON.parse(responseBody); ",
+							"tests[\"Estrutura do json validada com sucesso\"] = true; ",
+							"",
+							"// Validar os dados do Json: ",
+							"",
+							"tests[\"Validação do dado page realizado com sucesso\"];",
+							"",
+							"estruturaJson.page=\"2\"; ",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"id": "d9f7556a-75b8-467d-92f9-8c140cf43396"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=2 ",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2 "
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
