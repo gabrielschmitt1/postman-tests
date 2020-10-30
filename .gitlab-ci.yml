@@ -7,5 +7,6 @@ postman_tests:
         entrypoint: [""]
     script:
         - newman --version
+        - newman run TestedaApi_reqres.postman_collection.json
         
 
