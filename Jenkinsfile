@@ -16,16 +16,16 @@ pipeline {
             }
       }
       stage('Test') {
-        steps {
+         steps {
             echo 'Running regression tests'
             sh 'newman run TestedaApi_reqres.postman_collection.json --reporters cli,junit,htmlextra --reporter-junit-export "report.xml" --reporter-htmlextra-export "newman_result.html"'
             junit "*.xml"
         }
       }
-      post {
-        always {
-            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
-        }
+         post {
+            always {
+               emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+         }
       }
       stage('Prod') {
          steps {
