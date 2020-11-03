@@ -18,7 +18,8 @@ pipeline {
       stage('Test') {
         steps {
             echo 'Running regression tests'
-            sh 'newman run TestedaApi_reqres.postman_collection.json --reporters cli,junit --reporter-junit-export report.xml'
+            sh 'newman run TestedaApi_reqres.postman_collection.json --reporters cli,junit,htmlextra --reporter-junit-export "report.xml" --reporter-htmlextra-export "newman_result.html"'
+            junit "*.xml"
         }
       }
       stage('Prod') {
