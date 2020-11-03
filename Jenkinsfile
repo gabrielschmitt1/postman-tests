@@ -5,7 +5,6 @@ pipeline {
            args '--entrypoint=""'
        }
    }
-
    stages {
       stage('Build') {
          steps {
@@ -23,6 +22,11 @@ pipeline {
             junit "*.xml"
         }
       }
+      post {
+        always {
+            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+        }
+      }
       stage('Prod') {
          steps {
             echo 'System is ready'
@@ -30,3 +34,4 @@ pipeline {
       }
    }
 }
+
