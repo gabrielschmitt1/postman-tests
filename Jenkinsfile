@@ -13,6 +13,7 @@ pipeline {
             sh 'newman --version'
             sh 'npm install -g newman-reporter-html'
             sh 'npm install -g newman-reporter-junitfull'
+            sh 'npm install -g newman-reporter-htmlextra'
             }
       }
       stage('Test') {
