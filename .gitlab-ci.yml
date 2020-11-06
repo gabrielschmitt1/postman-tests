@@ -1,6 +1,9 @@
 stages:
     - test
-postman_tests: 
+postman_tests:
+    variable:
+        ENVIRONMENT: ‘Pipeline1’
+          stage: test
     stage: test
     image: 
         name: postman/newman_alpine33
@@ -13,5 +16,6 @@ postman_tests:
         when: always
         paths:
         - teste.html
-        
 
+
+        
