@@ -1,7 +1,8 @@
 stages:
-    - test
+    - pipeline1
+    - pipeline2
 postman_tests:
-    stage: test
+    stage: pipeline1
     image: 
         name: postman/newman_alpine33
         entrypoint: [""]
@@ -12,7 +13,19 @@ postman_tests:
     artifacts:
         when: always
         paths:
-        - teste.html
-
+        - teste1.html
+    stage: pipeline2
+    image: 
+        name: postman/newman_alpine33
+        entrypoint: [""]
+    script:
+        - newman --version
+        - npm install -g newman-reporter-html
+        - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste.html
+    artifacts:
+        when: always
+        paths:
+        - teste2.html
+        
 
         
