@@ -1,20 +1,19 @@
 stages:
     - Synthetic Tests
-  
-  synthetic-tests:
+synthetic-tests:
     stage: Synthetic Tests
     image: node:latest
     script:
-      - npm i
-      - npm run clean
-      - npm test
+        - npm i
+        - npm run clean
+        - npm test
     artifacts:
-      when: always
-      expire_in: 1 week
-      reports:
-        junit: reports/newman-run-report-*.xml
-      paths:
-        - reports/
+        when: always
+        expire_in: 1 week
+        reports:
+            junit: reports/newman-run-report-*.xml
+        paths:
+            - reports
 # stages:
 #     - test
 #     - build
