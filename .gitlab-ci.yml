@@ -9,7 +9,6 @@ postman_tests:
     script:
         - newman --version
         - npm install -g newman-reporter-html
-        - npm install -g newman-reporter-allure
     stage: test
     script:
         - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste.html
