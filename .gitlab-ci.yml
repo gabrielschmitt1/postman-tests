@@ -1,6 +1,6 @@
 stages:
     - build
-    - test
+    #- test
 postman_tests:
     stage: build
     image: 
@@ -9,13 +9,18 @@ postman_tests:
     script:
         - newman --version
         - npm install -g newman-reporter-html
-    stage: test
-    script:
         - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste.html
     artifacts:
         when: always
         paths:
-        - teste.html
+            - teste.html
+    # stage: test
+    # script:
+    #     - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste.html
+    # artifacts:
+    #     when: always
+    #     paths:
+    #     - teste.html
 
 
         
