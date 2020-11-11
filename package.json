@@ -1,0 +1,17 @@
+{
+  "name": "postman-newman-testes",
+  "version": "1.0.0",
+  "dependencies": {
+    "newman-reporter-html": "^1.0.1",
+    "newman": "^5.0.2"
+  },
+  "devDependencies": {
+    "mkdirp": "^0.5.1",
+    "npm": "^6.14.16",
+    "rimraf": "^2.6.2"
+  },
+  "scripts": {
+    "clean": "rimraf reports/; mkdirp reports/",
+    "test": "newman run collections/Restful_Booker_Collection.postman_collection.json -d envs/Restful_Booker_Environment.postman_environment.json -n 4 --insecure --reporters cli,html,junit --reporter-junit-export reports/ --reporter-html-export reports/"
+  }
+}
