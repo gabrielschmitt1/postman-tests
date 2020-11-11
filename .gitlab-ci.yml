@@ -1,8 +1,8 @@
 stages:
-    - Gerenciamento de Chaves
+    - Synthetic Tests
   
   synthetic-tests:
-    stage: Gerenciamento de Chaves
+    stage: Synthetic Tests
     image: node:latest
     script:
       - npm i
