@@ -9,14 +9,14 @@ postman_tests:
     script:
         - newman --version
         - npm install -g newman-reporter-html
-        - npm install -g newman-reporter-alure
+        - npm install -g newman-reporter-allure
     stage: test
     script:
-        - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html,allure --reporter-html-export teste1.html
+        - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste1.html
     artifacts:
         when: always
         paths:
-        - teste1.html
+        - teste.html
 
 
         
