@@ -12,12 +12,11 @@ postman_tests:
         - npm install -g newman-reporter-alure
     stage: test
     script:
-        - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html,allure --reporter-html-export teste1.html --reporter-allure-export allure_reports
+        - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html,allure --reporter-html-export teste1.html
     artifacts:
         when: always
         paths:
         - teste1.html
-        - allure_reports
 
 
         
