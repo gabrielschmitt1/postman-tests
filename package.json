@@ -1,14 +1,14 @@
 {
   "name": "postman-newman-testes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
-    "newman-reporter-html": "^1.0.1",
-    "newman": "^5.0.2"
+    "newman-reporter-html": "^1.0.5",
+    "newman": "^5.2.1"
   },
   "devDependencies": {
-    "mkdirp": "^0.5.1",
-    "npm": "^6.14.16",
-    "rimraf": "^2.6.2"
+    "mkdirp": "^1.0.4",
+    "npm": "^6.14.8",
+    "rimraf": "^3.0.2"
   },
   "scripts": {
     "clean": "rimraf reports/; mkdirp reports/",
