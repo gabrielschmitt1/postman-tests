@@ -1,18 +1,23 @@
 stages:
+    - build
     - test
 postman_tests:
-    stage: test
+    stage: build
     image: 
         name: postman/newman_alpine33
         entrypoint: [""]
     script:
         - newman --version
         - npm install -g newman-reporter-html
-        - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste1.html
+        - npm install -g newman-reporter-alure
+    stage: test
+    script:
+        - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html,allure --reporter-html-export teste1.html --reporter-allure-export allure_reports
     artifacts:
         when: always
         paths:
         - teste1.html
+        - allure_reports
 
 
         
