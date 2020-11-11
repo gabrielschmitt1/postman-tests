@@ -9,10 +9,10 @@ postman_tests:
         - newman --version
         - npm install -g newman-reporter-html
         - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste1.html
-        - newman run API_restfull/TestedaApi_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste2.html
     artifacts:
         when: always
         paths:
-        - teste.html    
+        - teste1.html
+
 
         
