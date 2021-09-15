@@ -1,6 +1,4 @@
-# PIX - Testes automatizados para executar os testes de API do PIX
-
-Projeto para automação das APIs Caixa relacionadas ao PIX
+# Coleções do Postman para testes de API 
 
 Neste projeto foi utilizado o Plugin Newman do Postman para execução de coleções por linha de comando
 
