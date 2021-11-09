@@ -9,7 +9,7 @@ postman_tests:
     script:
         - newman --version
         - npm install -g newman-reporter-html
-        - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste.html
+        - newman run collections/Test_Api_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste.html
     artifacts:
         when: always
         paths:
@@ -24,14 +24,14 @@ postman_tests:
     script:
         - newman --version
         - npm install -g newman-reporter-html
-        - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste.html
+        - newman run collections/Test_Api_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste.html
     artifacts:
         when: always
         paths:
             - teste.html
     stage: test
     script:
-        - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste.html
+        - newman run collections/Test_Api_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste.html
     artifacts:
         when: always
         paths:
