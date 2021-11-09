@@ -1,41 +1,41 @@
-## stages:
-#     - test
-#     - build
-# postman_tests:
-#     stage: test
-#     image: 
-#         name: postman/newman_alpine33
-#         entrypoint: [""]
-#     script:
-#         - newman --version
-#         - npm install -g newman-reporter-html
-#         - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste.html
-#     artifacts:
-#         when: always
-#         paths:
-#             - teste.html
-#     stage: build
-#     script:
-#         - newman --vesion
-    # stage: test
-    # image: 
-    #     name: postman/newman_alpine33
-    #     entrypoint: [""]
-    # script:
-    #     - newman --version
-    #     - npm install -g newman-reporter-html
-    #     - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste.html
-    # artifacts:
-    #     when: always
-    #     paths:
-    #         - teste.html
-    # # stage: test
-    # # script:
-    #     - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste.html
-    # artifacts:
-    #     when: always
-    #     paths:
-    #     - teste.html
+stages:
+    - test
+    - build
+postman_tests:
+    stage: test
+    image: 
+        name: postman/newman_alpine33
+        entrypoint: [""]
+    script:
+        - newman --version
+        - npm install -g newman-reporter-html
+        - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste.html
+    artifacts:
+        when: always
+        paths:
+            - teste.html
+    stage: build
+    script:
+        - newman --vesion
+    stage: test
+    image: 
+        name: postman/newman_alpine33
+        entrypoint: [""]
+    script:
+        - newman --version
+        - npm install -g newman-reporter-html
+        - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste.html
+    artifacts:
+        when: always
+        paths:
+            - teste.html
+    stage: test
+    script:
+        - newman run API_req/TestedaApi_reqres.postman_collection.json --reporters cli,html --reporter-html-export teste.html
+    artifacts:
+        when: always
+        paths:
+        - teste.html
 
 
         
